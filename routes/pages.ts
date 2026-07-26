@@ -14,6 +14,9 @@ function isChecked(value: unknown): boolean {
 router.get('/', (_req, res) => {
   res.render('index');
 });
+router.get('/about', (_req, res) => {
+  res.render('about');
+});
 router.get('/privacy', (_req, res) => {
   res.render('privacy');
 });

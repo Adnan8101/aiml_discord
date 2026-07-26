@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Alumni Connect</title>
+    <meta name="description" content="Learn about the Alumni Connect complete system and how it works.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%235865F2'/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              linkedin: '#0a66c2',
+              discord: '#5865F2',
+              pageBg: '#f3f2ef',
+              cardBorder: '#e0dfdc',
+              textPrimary: '#191919',
+              textSecondary: '#666666'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-pageBg text-textPrimary min-h-screen flex items-center justify-center font-sans antialiased p-4">
+    <div class="bg-white max-w-2xl w-full rounded-xl p-8 shadow-sm border border-cardBorder">
+        <div class="flex justify-center mb-6 space-x-4 items-center">
+            <div class="w-12 h-12 rounded-lg bg-discord flex items-center justify-center shadow-sm">
+                <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 127.14 96.36"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.31,60,73.31,53s5-12.74,11.43-12.74S96.2,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg>
+            </div>
+            <div class="h-[2px] w-8 bg-gray-300"></div>
+            <div class="w-12 h-12 rounded-lg bg-linkedin flex items-center justify-center shadow-sm">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </div>
+        </div>
+
+        <h1 class="text-3xl font-bold text-center mb-6 text-textPrimary">About the System</h1>
+        
+        <div class="mb-8">
+            <h2 class="text-xl font-semibold mb-3 text-linkedin">How It Works & Usage</h2>
+            <p class="text-textSecondary leading-relaxed mb-4">
+                The Alumni Connect Bot seamlessly links our Discord community with verified LinkedIn professionals.
+                By connecting your account, you get access to an exclusive alumni network, directory, and job board right inside Discord.
+            </p>
+            <p class="text-textSecondary leading-relaxed">
+                <strong>Usage:</strong> It's simple! Use the bot commands in our Discord server to connect your account, post jobs, find seniors or juniors, and expand your professional network easily.
+            </p>
+        </div>
+
+        <div>
+            <h2 class="text-xl font-semibold mb-4 text-linkedin">Key Commands</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-pageBg p-4 rounded-lg border border-gray-200">
+                    <code class="text-discord font-bold block mb-1">/connect-linkedin</code>
+                    <p class="text-sm text-textSecondary">Securely connect your LinkedIn profile</p>
+                </div>
+                <div class="bg-pageBg p-4 rounded-lg border border-gray-200">
+                    <code class="text-discord font-bold block mb-1">/profile</code>
+                    <p class="text-sm text-textSecondary">View or manage your connected profile</p>
+                </div>
+                <div class="bg-pageBg p-4 rounded-lg border border-gray-200">
+                    <code class="text-discord font-bold block mb-1">/browse-jobs</code>
+                    <p class="text-sm text-textSecondary">Explore active job postings from alumni</p>
+                </div>
+                <div class="bg-pageBg p-4 rounded-lg border border-gray-200">
+                    <code class="text-discord font-bold block mb-1">/post-job</code>
+                    <p class="text-sm text-textSecondary">Share a new job or referral opportunity</p>
+                </div>
+                <div class="bg-pageBg p-4 rounded-lg border border-gray-200">
+                    <code class="text-discord font-bold block mb-1">/find-seniors</code>
+                    <p class="text-sm text-textSecondary">Search and connect with senior alumni</p>
+                </div>
+                <div class="bg-pageBg p-4 rounded-lg border border-gray-200">
+                    <code class="text-discord font-bold block mb-1">/leaderboard</code>
+                    <p class="text-sm text-textSecondary">See top community contributors</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-8 flex justify-center border-t border-gray-100 pt-6 space-x-6">
+            <a href="/" class="text-sm font-semibold text-textSecondary hover:text-linkedin transition-colors">Home</a>
+            <a href="/privacy" class="text-sm font-semibold text-textSecondary hover:text-linkedin transition-colors">Privacy Policy</a>
+        </div>
+    </div>
+</body>
+</html>
