@@ -5,7 +5,7 @@ export const securityHeaders: RequestHandler = (_req, res, next) => {
     'Content-Security-Policy',
     [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.tailwindcss.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data:",
       "connect-src 'self'",
