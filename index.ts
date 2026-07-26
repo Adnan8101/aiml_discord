@@ -23,6 +23,10 @@ app.use(express.urlencoded({ extended: false, limit: '16kb' }));
 app.use(express.json({ limit: '16kb' }));
 app.use(rateLimit({ windowMs: 60_000, max: 120 }));
 
+// Ignore favicon requests
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
+
 // Validate env on first real request so cold-start doesn't crash
 app.use((_req, _res, next) => {
   try {
