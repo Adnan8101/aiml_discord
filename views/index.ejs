@@ -13,11 +13,18 @@
           extend: {
             colors: {
               linkedin: '#0a66c2',
+              linkedinHover: '#004182',
               discord: '#5865F2',
-              pageBg: '#f3f2ef',
-              cardBorder: '#e0dfdc',
-              textPrimary: '#191919',
-              textSecondary: '#666666'
+              pageBg: '#F3F2EF',
+              cardBorder: 'rgba(0,0,0,0.08)',
+              cardBg: '#FFFFFF',
+              textPrimary: 'rgba(0,0,0,0.9)',
+              textSecondary: 'rgba(0,0,0,0.6)'
+            },
+            fontFamily: {
+              sans: [
+                '-apple-system', 'system-ui', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', '"Fira Sans"', 'Ubuntu', 'Oxygen', '"Oxygen Sans"', 'Cantarell', '"Droid Sans"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Lucida Grande"', 'Helvetica', 'Arial', 'sans-serif'
+              ],
             }
           }
         }
@@ -25,7 +32,7 @@
     </script>
 </head>
 <body class="bg-pageBg text-textPrimary min-h-screen flex items-center justify-center font-sans antialiased p-4">
-    <div class="bg-white max-w-md w-full rounded-xl p-8 shadow-sm border border-cardBorder">
+    <div class="bg-cardBg max-w-md w-full rounded-lg p-8 border border-cardBorder">
         <div class="flex flex-col items-center mb-6">
             <img src="/logo.png" alt="TCET Logo" class="w-32 h-auto object-contain mb-6">
             <div class="flex justify-center space-x-4 items-center">

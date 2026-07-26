@@ -13,11 +13,18 @@
           extend: {
             colors: {
               linkedin: '#0a66c2',
+              linkedinHover: '#004182',
               discord: '#5865F2',
-              pageBg: '#f3f2ef',
-              cardBorder: '#e0dfdc',
-              textPrimary: '#191919',
-              textSecondary: '#666666'
+              pageBg: '#F3F2EF',
+              cardBorder: 'rgba(0,0,0,0.08)',
+              cardBg: '#FFFFFF',
+              textPrimary: 'rgba(0,0,0,0.9)',
+              textSecondary: 'rgba(0,0,0,0.6)'
+            },
+            fontFamily: {
+              sans: [
+                '-apple-system', 'system-ui', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', '"Fira Sans"', 'Ubuntu', 'Oxygen', '"Oxygen Sans"', 'Cantarell', '"Droid Sans"', '"Apple Color Emoji"', '"Segoe UI Emoji"', '"Segoe UI Symbol"', '"Lucida Grande"', 'Helvetica', 'Arial', 'sans-serif'
+              ],
             }
           }
         }
@@ -25,7 +32,7 @@
     </script>
 </head>
 <body class="bg-pageBg text-textPrimary min-h-screen flex items-center justify-center font-sans antialiased p-4">
-    <div class="bg-white max-w-2xl w-full rounded-xl p-8 shadow-sm border border-cardBorder">
+    <div class="bg-cardBg max-w-4xl w-full rounded-lg p-8 border border-cardBorder">
         <div class="flex flex-col items-center mb-6">
             <img src="/logo.png" alt="TCET Logo" class="w-32 h-auto object-contain mb-6">
             <div class="flex justify-center space-x-4 items-center">
@@ -83,43 +90,79 @@
         </div>
 
         <div>
-            <h2 class="text-xl font-semibold mb-4 text-linkedin">Key Commands</h2>
+            <h2 class="text-xl font-semibold mb-4 text-textPrimary">Key Commands & Working</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/connect-linkedin</code>
                     <p class="text-sm text-textSecondary">Securely connect your LinkedIn profile</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/profile</code>
                     <p class="text-sm text-textSecondary">View or manage your connected profile</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/browse-jobs</code>
                     <p class="text-sm text-textSecondary">Explore active job postings from alumni</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/post-job</code>
                     <p class="text-sm text-textSecondary">Share a new job or referral opportunity</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/find-seniors</code>
                     <p class="text-sm text-textSecondary">Search and connect with senior alumni</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/leaderboard</code>
                     <p class="text-sm text-textSecondary">See top community contributors</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/browse-directory</code>
                     <p class="text-sm text-textSecondary">Search the entire alumni professional directory</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/my-postings</code>
                     <p class="text-sm text-textSecondary">Manage the jobs and referrals you posted</p>
                 </div>
-                <div class="bg-pageBg p-4 rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
                     <code class="text-linkedin font-bold block mb-1">/disconnect</code>
                     <p class="text-sm text-textSecondary">Safely unlink and remove your LinkedIn data</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/job-details</code>
+                    <p class="text-sm text-textSecondary">View detailed information about a specific job posting</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/save-job</code>
+                    <p class="text-sm text-textSecondary">Save a job posting to your personal bookmarks</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/my-saved-jobs</code>
+                    <p class="text-sm text-textSecondary">View and manage your bookmarked job postings</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/request-connect</code>
+                    <p class="text-sm text-textSecondary">Request a direct connection or mentorship</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/report-listing</code>
+                    <p class="text-sm text-textSecondary">Report an inappropriate or expired job listing</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/find-juniors</code>
+                    <p class="text-sm text-textSecondary">Search for junior students or mentees</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/update-job-status</code>
+                    <p class="text-sm text-textSecondary">Update the status of your job applications</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/verify-senior</code>
+                    <p class="text-sm text-textSecondary">Verify your senior status for additional privileges</p>
+                </div>
+                <div class="bg-cardBg p-4 rounded-lg border border-cardBorder">
+                    <code class="text-linkedin font-bold block mb-1">/directory-card</code>
+                    <p class="text-sm text-textSecondary">View an expanded profile card of any member</p>
                 </div>
             </div>
         </div>
