@@ -22,14 +22,19 @@ router.get('/linkedin', (req, res) => {
   linkedInUrl.searchParams.set('redirect_uri', env.LINKEDIN_REDIRECT_URI);
   linkedInUrl.searchParams.set('state', state.raw);
   linkedInUrl.searchParams.set('scope', 'openid profile email');
+  console.log('Redirecting to LinkedIn with URL:', linkedInUrl.toString());
+  console.log('Using Client ID:', env.LINKEDIN_CLIENT_ID);
+  console.log('Using Redirect URI:', env.LINKEDIN_REDIRECT_URI);
   res.redirect(linkedInUrl.toString());
 });
 router.get(
   '/callback',
   asyncHandler(async (req, res) => {
-    const { code, error } = req.query;
+    const { code, error, error_description } = req.query;
+    console.log('Received callback from LinkedIn. Query parameters:', req.query);
     if (error) {
       console.warn('LinkedIn returned an OAuth error:', String(error).slice(0, 200));
+      console.warn('Error description:', error_description);
       return sendError(
         res,
         400,
