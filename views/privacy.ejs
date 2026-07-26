@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Alumni Connect</title>
+    <meta name="description" content="How Alumni Connect collects, uses, and deletes your LinkedIn profile data.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%235865F2'/></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              linkedin: '#0a66c2',
+              pageBg: '#f3f2ef',
+              cardBorder: '#e0dfdc',
+              textPrimary: '#191919',
+              textSecondary: '#666666'
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-pageBg text-textPrimary min-h-screen p-8 font-sans antialiased">
+    <div class="bg-white max-w-3xl mx-auto rounded-xl p-10 shadow-sm border border-cardBorder">
+        <h1 class="text-3xl font-bold mb-6">Privacy Policy</h1>
+        <div class="space-y-4 text-textSecondary text-sm leading-relaxed">
+            <p>Welcome to Alumni Connect. We respect your privacy and only request the data necessary to provide networking services within our Discord server.</p>
+            <h2 class="text-xl font-semibold text-textPrimary mt-6">Information We Collect</h2>
+            <p>When you connect your LinkedIn account we request the <code class="bg-gray-100 text-gray-800 px-1 rounded">openid</code>, <code class="bg-gray-100 text-gray-800 px-1 rounded">profile</code> and <code class="bg-gray-100 text-gray-800 px-1 rounded">email</code> scopes, and store: your LinkedIn subject identifier, name, email address and profile picture URL. Your LinkedIn access and refresh tokens are encrypted at rest and used only to maintain the connection.</p>
+            <p>Details you enter yourself in Discord &mdash; your current title, skills and role tier &mdash; are stored alongside your Discord user ID.</p>
+            <h2 class="text-xl font-semibold text-textPrimary mt-6">How We Use Your Information</h2>
+            <p>Your information is used solely to display your profile in our Discord Alumni Directory (if you explicitly opt-in) and to facilitate networking requests between community members.</p>
+            <h2 class="text-xl font-semibold text-textPrimary mt-6">Data Sharing</h2>
+            <p>We do not sell, rent, or share your personal data with third parties. Your data is strictly confined to the database powering this Discord bot.</p>
+            <h2 class="text-xl font-semibold text-textPrimary mt-6">Your Choices</h2>
+            <p>Your profile only appears in the Alumni Directory, and can only receive networking requests, if you explicitly opt in. You can change either setting at any time with <code class="bg-gray-100 text-gray-800 px-1 rounded">/edit-directory-profile</code> in Discord.</p>
+            <h2 class="text-xl font-semibold text-textPrimary mt-6">Data Deletion</h2>
+            <p>Typing <code class="bg-gray-100 text-gray-800 px-1 rounded">/disconnect-linkedin</code> in the Discord server revokes the connection and erases your LinkedIn identifiers, stored tokens, name, headline, profile picture and public profile URL, and switches off directory visibility and networking requests.</p>
+            <p>A minimal record keyed to your Discord user ID is retained so the bot can recognise you if you reconnect. To have that record removed entirely, contact a server administrator.</p>
+        </div>
+        <div class="mt-10 border-t border-gray-200 pt-6">
+            <a href="/" class="text-linkedin font-semibold hover:underline">&larr; Back Home</a>
+        </div>
+    </div>
+</body>
+</html>

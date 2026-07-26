@@ -1,0 +1,131 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                     String    @id @default(uuid())
+  discord_id             String    @unique
+  linkedin_sub           String?   @unique
+  linkedin_access_token  String?
+  linkedin_refresh_token String?
+  token_expires_at       DateTime?
+
+  full_name              String?
+  email                  String?
+  headline               String?
+  profile_photo_url      String?
+  linkedin_public_url    String?
+
+  role_tier              String?
+  current_title          String?
+  skills_tags            String[]
+
+  directory_visible      Boolean   @default(false)
+  open_to_connect        Boolean   @default(false)
+
+  job_postings           JobPosting[]
+  job_applications       JobApplication[]
+  saved_searches         SavedSearch[]
+  sent_connect_requests  ConnectRequest[] @relation("Requester")
+  received_connect_requests ConnectRequest[] @relation("Target")
+  reports                Report[]
+
+  created_at             DateTime  @default(now())
+  updated_at             DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model JobPosting {
+  id                 String    @id @default(uuid())
+  posted_by_user_id  String?
+  posted_by          User?     @relation(fields: [posted_by_user_id], references: [id])
+  guild_id           String?
+  title              String
+  company            String
+  description        String
+  apply_url          String
+  tags               String[]
+  channel_message_id String?
+  view_count         Int       @default(0)
+  click_count        Int       @default(0)
+  created_at         DateTime  @default(now())
+  updated_at         DateTime  @updatedAt
+  expires_at         DateTime?
+  reports            Report[]
+
+  @@map("job_postings")
+}
+
+model JobApplication {
+  id         String    @id @default(uuid())
+  user_id    String
+  user       User      @relation(fields: [user_id], references: [id])
+  job_title  String
+  company    String
+  job_url    String
+  status     String
+  applied_at DateTime?
+  notes      String?
+  created_at DateTime  @default(now())
+
+  @@map("job_applications")
+}
+
+model SavedSearch {
+  id          String   @id @default(uuid())
+  user_id     String
+  user        User     @relation(fields: [user_id], references: [id])
+  keywords    String?
+  location    String?
+  remote_only Boolean  @default(false)
+  frequency   String?
+  created_at  DateTime @default(now())
+
+  @@map("saved_searches")
+}
+
+model ConnectRequest {
+  id           String    @id @default(uuid())
+  requester_id String
+  requester    User      @relation("Requester", fields: [requester_id], references: [id])
+  target_id    String
+  target       User      @relation("Target", fields: [target_id], references: [id])
+  status       String    @default("pending") // pending | accepted | declined
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+
+  @@map("connect_requests")
+}
+
+model Report {
+  id           String      @id @default(uuid())
+  job_id       String
+  job          JobPosting  @relation(fields: [job_id], references: [id])
+  reporter_id  String
+  reporter     User        @relation(fields: [reporter_id], references: [id])
+  reason       String
+  status       String      @default("open") // open | reviewed | dismissed
+  created_at   DateTime    @default(now())
+  updated_at   DateTime    @updatedAt
+
+  @@map("reports")
+}
+
+model GuildConfig {
+  id                   String   @id @default(uuid())
+  guild_id             String   @unique
+  jobs_channel_id      String?
+  mod_logs_channel_id  String?
+  admin_role_id        String?
+  
+  created_at           DateTime @default(now())
+  updated_at           DateTime @updatedAt
+
+  @@map("guild_configs")
+}
