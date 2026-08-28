@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { encrypt } from '../lib/crypto';
-import { prisma } from '../database';
+import { Prisma, prisma } from '../database';
 import { env } from '../config/env';
 import { verifyState } from '../lib/state';
 import { asyncHandler, sendError } from '../lib/http';
@@ -108,6 +108,14 @@ router.get(
       });
       res.redirect(`/consent?state=${encodeURIComponent(state.raw)}`);
     } catch (err) {
+      if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2002') {
+        return sendError(
+          res,
+          409,
+          'LinkedIn account already connected',
+          'This LinkedIn account is already connected to another Discord account. Run /disconnect-linkedin in that Discord account before trying again.'
+        );
+      }
       console.error('LinkedIn authentication failed for discord_id=%s:', discord_id, err);
       return sendError(
         res,
